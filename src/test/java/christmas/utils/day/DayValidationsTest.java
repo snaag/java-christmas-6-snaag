@@ -1,11 +1,11 @@
-package christmas.utils.date;
+package christmas.utils.day;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DateValidationsTest {
+class DayValidationsTest {
 
     @ParameterizedTest
     @CsvSource({
@@ -17,7 +17,7 @@ class DateValidationsTest {
     })
     public void 숫자가_아닌_경우(String number) {
         assertThrows(IllegalArgumentException.class, () -> {
-           DateValidations.checkNumber(number);
+           DayValidations.checkNumber(number);
         });
     }
 
@@ -28,7 +28,7 @@ class DateValidationsTest {
             "100"
     })
     public void 숫자인_경우(String number) {
-        DateValidations.checkNumber(number);
+        DayValidations.checkNumber(number);
     }
 
     @ParameterizedTest
@@ -40,7 +40,7 @@ class DateValidationsTest {
     })
     public void 범위_내_아닌_경우(int day) {
         assertThrows(IllegalArgumentException.class, () -> {
-            DateValidations.checkInMonthRange(day);
+            DayValidations.checkInMonthRange(day);
         });
     }
 
@@ -52,6 +52,6 @@ class DateValidationsTest {
             "15"
     })
     public void 범위_내_경우(int day) {
-        DateValidations.checkInMonthRange(day);
+        DayValidations.checkInMonthRange(day);
     }
 }
