@@ -24,23 +24,22 @@ public class DayService {
         for(byte specialDay: specialDays) {
             this.calendar[specialDay] += SPECIAL;
         }
-
-        this.day = Integer.parseInt(this.dayInputDto.getDay());
     }
 
     public int getDay() {
         return this.day;
     }
 
-    private void checkValidDateOrError() {
-        try {
-            String day = InputView.readDate();
-            this.validateDate(day);
-            dayInputDto.setValid(true);
-            dayInputDto.setDay(day);
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+    public void setDay(int day) {
+        this.day = day;
+    }
+
+    public boolean isWeekday(int day) {
+        if(this.calendar[day] == WEEKDAY) {
+            return true;
         }
+
+        return this.calendar[day] == WEEKDAY + SPECIAL;
     }
 
     public boolean isWeekend(int day) {
