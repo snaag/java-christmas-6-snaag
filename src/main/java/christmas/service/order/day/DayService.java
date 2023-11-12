@@ -1,20 +1,28 @@
 package christmas.service.order.day;
 
-import christmas.dto.DayInputDto;
-import christmas.utils.day.DayValidations;
-import christmas.view.InputView;
+import static christmas.utils.Constants.*;
 
 public class DayService {
     private int day;
-    private final DayInputDto dayInputDto;
+    private byte[] calendar;
 
     public DayService() {
-        this.dayInputDto = new DayInputDto();
+        this.makeCalendar();
     }
 
-    public void setDay() {
-        while(!dayInputDto.isValid()) {
-            this.checkValidDateOrError();
+    public void makeCalendar() {
+        this.calendar = new byte[]{
+                0,                                      WEEKEND,WEEKEND, // 1~2
+                WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKEND,WEEKEND, // 3~9
+                WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKEND,WEEKEND, // 10~16
+                WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKEND,WEEKEND, // 17~23
+                WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKDAY,WEEKEND,WEEKEND, // 24~30
+                WEEKDAY                                                  // 31
+        };
+
+        byte[] specialDays = new byte[]{3, 10, 17, 24, 25, 31};
+        for(byte specialDay: specialDays) {
+            this.calendar[specialDay] += SPECIAL;
         }
 
         this.day = Integer.parseInt(this.dayInputDto.getDay());
@@ -35,10 +43,11 @@ public class DayService {
         }
     }
 
-    public void validateDate(String givenDay) {
-        DayValidations.checkNumber(givenDay);
+    public boolean isWeekend(int day) {
+        return this.calendar[day] == WEEKEND;
+    }
 
-        int day = Integer.parseInt(givenDay);
-        DayValidations.checkInMonthRange(day);
+    public boolean isSpecialDay(int day) {
+        return this.calendar[day] == WEEKDAY + SPECIAL;
     }
 }
