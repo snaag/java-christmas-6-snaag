@@ -102,4 +102,64 @@ class MenuValidationsTest {
                 Arguments.of((Object) new String[]{"시저샐러드-1","초코케이크-1"})
         );
     }
+
+    @ParameterizedTest
+    @MethodSource("providedMenusMoreThan")
+    void 전체_합산_20개_초과(String[] menus, int threshold) {
+        assertThrows(IllegalArgumentException.class, () -> {
+            MenuValidations.checkTotalCountMoreThan(menus, threshold);
+        });
+    }
+
+    static Stream<Arguments> providedMenusMoreThan() {
+        return Stream.of(
+                Arguments.of((Object) new String[]{"해산물파스타-10","해산물파스타-10","초코케이크-1"}, 20),
+                Arguments.of((Object) new String[]{"초코케이크-10","해산물파스타-9","초코케이크-3"}, 20),
+                Arguments.of((Object) new String[]{"초코케이크-20","해산물파스타-9","초코케이크-3"}, 20)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("providedMenusLessThan")
+    void 전체_합산_20개_이내(String[] menus, int threshold) {
+        MenuValidations.checkTotalCountMoreThan(menus, threshold);
+    }
+
+    static Stream<Arguments> providedMenusLessThan() {
+        return Stream.of(
+                Arguments.of((Object) new String[]{"해산물파스타-10","해산물파스타-10"}, 20),
+                Arguments.of((Object) new String[]{"초코케이크-10","해산물파스타-9"}, 20),
+                Arguments.of((Object) new String[]{"초코케이크-1","해산물파스타-2"}, 20)
+        );
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("providedOnlyBeverage")
+    void 전체_주문_음료만(String[] menus) {
+        assertThrows(IllegalArgumentException.class, () -> {
+            MenuValidations.checkOnlyBeverage(menus);
+        });
+    }
+
+    static Stream<Arguments> providedOnlyBeverage() {
+        return Stream.of(
+                Arguments.of((Object) new String[]{"제로콜라-10","레드와인-1"}),
+                Arguments.of((Object) new String[]{"제로콜라-10","샴페인-9"})
+        );
+    }
+
+
+    @ParameterizedTest
+    @MethodSource("providedOthers")
+    void 전체_주문_골고루(String[] menus) {
+        MenuValidations.checkOnlyBeverage(menus);
+    }
+
+    static Stream<Arguments> providedOthers() {
+        return Stream.of(
+                Arguments.of((Object) new String[]{"시저샐러드-10","레드와인-1"}),
+                Arguments.of((Object) new String[]{"제로콜라-10","타파스-9"})
+        );
+    }
 }
