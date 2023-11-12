@@ -1,4 +1,4 @@
-package christmas.service.order.day;
+package christmas.service.order.day.input;
 
 import christmas.dto.DayInputDto;
 import christmas.utils.day.DayValidations;
