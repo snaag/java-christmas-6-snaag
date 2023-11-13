@@ -11,8 +11,9 @@ public class DayService {
         this.dayInputService = new DayInputService();
     }
 
-    public void setDay() {
+    public int pickDay() {
         this.day = this.dayInputService.getInputDay();
+        return this.day;
     }
     public int getDay() {
         return this.day;
