@@ -1,4 +1,4 @@
-package christmas.service.order.day.discount;
+package christmas.service.counter.discount;
 
 import static christmas.utils.Constants.WEEKEND;
 
