@@ -12,7 +12,7 @@ public class DayService {
     }
 
     public void setDay() {
-        this.day = this.dayInputService.setDay();
+        this.day = this.dayInputService.getInputDay();
     }
     public int getDay() {
         return this.day;
