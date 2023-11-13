@@ -11,7 +11,7 @@ public class DayInputService {
         this.dayInputDto = new DayInputDto();
     }
 
-    public int setDay() {
+    public int getInputDay() {
         while(!dayInputDto.isValid()) {
             this.checkValidDateOrError();
         }
