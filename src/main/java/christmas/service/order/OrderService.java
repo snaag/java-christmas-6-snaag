@@ -2,7 +2,7 @@ package christmas.service.order;
 
 import christmas.service.order.day.DayService;
 import christmas.service.order.menu.MenuService;
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Menu;
 
 import java.util.HashMap;
 
