@@ -21,6 +21,7 @@ public class ChristmasController {
         this.order();
 
         this.printBenefitOfToday();
+        this.printMenu();
     }
 
     public void order() {
@@ -34,6 +35,20 @@ public class ChristmasController {
     private void printBenefitOfToday() {
         int day = this.checkstandService.getDay();
         OutputView.printBenefitGreeting(day);
+    }
+
+    private void printMenu() {
+        HashMap<Menu, Integer> menus = this.checkstandService.getMenus();
+
+        String[] names = menus.keySet().stream()
+                .map(Menu::getName)
+                .toArray(String[]::new);
+
+        int[] counts = menus.keySet().stream()
+                .map(menus::get)
+                .mapToInt(a -> a).toArray();
+
+        OutputView.printMenu(names, counts);
     }
 }
 
