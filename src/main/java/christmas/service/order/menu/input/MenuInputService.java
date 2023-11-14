@@ -7,7 +7,6 @@ import christmas.view.InputView;
 import static christmas.utils.Constants.SEPARATOR;
 
 public class MenuInputService {
-    private final int MENU_UNDER_COUNT = 0;
 
     private final MenuInputDto menuInputDto;
 
@@ -35,6 +34,8 @@ public class MenuInputService {
     }
 
     public void validateMenu(String givenMenu) {
+        int MENU_UNDER_COUNT = 0;
+
         MenuValidations.checkMenuSyntax(givenMenu);
 
         String[] menus = givenMenu.split(SEPARATOR);
@@ -45,4 +46,5 @@ public class MenuInputService {
             MenuValidations.checkMenuMoreThan(menu, MENU_UNDER_COUNT);
         }
     }
+
 }
