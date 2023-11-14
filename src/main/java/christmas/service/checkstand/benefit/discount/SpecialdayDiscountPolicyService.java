@@ -8,9 +8,6 @@ import static christmas.utils.Constants.*;
 
 public class SpecialdayDiscountPolicyService extends DiscountPolicyService {
 
-    String DISCOUNT_NAME = "특별 할인";
-    int DISCOUNT_AMOUNT = 1_000;
-
     @Override
     public boolean isDiscountDay(int day) {
         return super.calendar[day] == WEEKDAY + SPECIAL;
@@ -19,6 +16,8 @@ public class SpecialdayDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public int getDiscountPrice(int day) {
+        int DISCOUNT_AMOUNT = 1_000;
+
         if(!this.isDiscountDay(day)) {
             return 0;
         }
@@ -27,7 +26,7 @@ public class SpecialdayDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public String getDiscountName() {
-        return this.DISCOUNT_NAME;
+        return "특별 할인";
     }
 
     @Override
