@@ -1,4 +1,5 @@
 package christmas.service.counter.discount;
+package christmas.service.checkstand.benefit.discount;
 
 import static christmas.utils.Constants.WEEKEND;
 
