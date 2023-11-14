@@ -2,10 +2,10 @@ package christmas.service.counter.discount;
 
 import static christmas.utils.Constants.*;
 
-public abstract class DiscountService {
+public abstract class DiscountPolicyService {
     protected byte[] calendar;
 
-    public DiscountService() {
+    public DiscountPolicyService() {
         this.makeCalendar();
     }
 
