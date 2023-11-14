@@ -67,6 +67,10 @@ public class OutputView {
         printNone();
     }
 
+    public static void printNewLine() {
+        System.out.println();
+    }
+
     private static void printNone() {
         System.out.println("없음");
     }
