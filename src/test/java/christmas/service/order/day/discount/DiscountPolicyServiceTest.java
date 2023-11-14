@@ -4,7 +4,7 @@ import christmas.service.checkstand.benefit.discount.ChristmasDiscountPolicyServ
 import christmas.service.checkstand.benefit.discount.SpecialdayDiscountPolicyService;
 import christmas.service.checkstand.benefit.discount.WeekdayDiscountPolicyService;
 import christmas.service.checkstand.benefit.discount.WeekendDiscountPolicyService;
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Menu;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
