@@ -3,7 +3,7 @@ package christmas.controller;
 import christmas.service.checkstand.CheckstandService;
 import christmas.service.checkstand.badge.Badge;
 import christmas.service.order.OrderService;
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Menu;
 import christmas.view.OutputView;
 
 import java.util.HashMap;
