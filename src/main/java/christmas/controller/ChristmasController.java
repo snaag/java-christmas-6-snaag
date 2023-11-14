@@ -108,8 +108,8 @@ public class ChristmasController {
     private void printTotalBenefitPrice() {
         int totalBenefitPrice = this.checkstandService.getTotalBenefitPrice();
 
-        OutputView.printTotalBenefitPrice(totalBenefitPrice);
         OutputView.printNewLine();
+        OutputView.printTotalBenefitPrice(totalBenefitPrice*-1);
     }
 
     private void printExpectedPaymentAmount() {
