@@ -1,6 +1,7 @@
 package christmas.controller;
 
 import christmas.service.checkstand.CheckstandService;
+import christmas.service.checkstand.badge.Badge;
 import christmas.service.order.OrderService;
 import christmas.utils.menu.Menu;
 import christmas.view.OutputView;
@@ -61,6 +62,7 @@ public class ChristmasController {
         this.printBenefitHistory();
         this.printTotalBenefitPrice();
         this.printExpectedPaymentAmount();
+        this.printEventBadge();
     }
 
 
@@ -110,6 +112,17 @@ public class ChristmasController {
         int discountPrice = this.checkstandService.getDiscountPrice();
 
         OutputView.printExpectedPaymentAmount(totalPrice - discountPrice);
+    }
+
+    private void printEventBadge() {
+        Badge badge = this.checkstandService.getBadge();
+
+        if(badge == null) {
+            OutputView.printEventBadgeNone();
+            return;
+        }
+
+        OutputView.printEventBadge(badge.getName());
     }
 }
 
