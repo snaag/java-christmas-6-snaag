@@ -1,6 +1,6 @@
 package christmas.service.checkstand.benefit.present;
 
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Menu;
 
 public class PresentService {
 
