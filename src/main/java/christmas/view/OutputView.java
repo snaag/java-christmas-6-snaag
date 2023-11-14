@@ -48,7 +48,7 @@ public class OutputView {
 
     public static void printTotalBenefitPrice(int price) {
         System.out.println("<총혜택 금액>");
-        System.out.println("-" + numberFormat.format(price) + KR_CURRENCY);
+        System.out.println(numberFormat.format(price) + KR_CURRENCY);
     }
 
     public static void printExpectedPaymentAmount(int price) {
