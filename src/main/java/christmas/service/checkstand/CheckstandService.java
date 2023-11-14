@@ -43,6 +43,10 @@ public class CheckstandService {
         return this.totalPrice;
     }
 
+    public Menu getPresent() {
+        return this.benefitService.getPresent(this.totalPrice);
+    }
+
     public HashMap<String, Integer> getBenefitHistory() {
         return this.benefitService.getBenefitHistory(this.menus, this.day, this.totalPrice);
     }
