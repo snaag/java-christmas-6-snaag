@@ -1,7 +1,6 @@
 package christmas.service.order.menu;
 
 import christmas.service.order.menu.input.MenuInputService;
-import christmas.utils.menu.Menu;
 
 import java.util.Arrays;
 import java.util.HashMap;
