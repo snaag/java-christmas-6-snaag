@@ -7,8 +7,8 @@ import christmas.service.order.menu.Menu;
 import java.util.HashMap;
 
 public class OrderService {
-    DayService dayService;
-    MenuService menuService;
+    private final DayService dayService;
+    private final MenuService menuService;
 
     public OrderService() {
         this.dayService = new DayService();
