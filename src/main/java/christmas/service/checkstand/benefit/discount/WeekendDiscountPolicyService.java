@@ -1,7 +1,7 @@
 package christmas.service.checkstand.benefit.discount;
 
-import christmas.utils.menu.Category;
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Category;
+import christmas.service.order.menu.Menu;
 
 import java.util.HashMap;
 
