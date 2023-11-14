@@ -7,7 +7,7 @@
     - order 에는 날짜를 처리하는 day, 메뉴를 처리하는 menu 로 구성
     - checkstand 에는 할인과 이벤트를 처리하는 present, 뱃지를 처리하는 badge 로 구성되어있음
 
-### 전체 구조
+### 1. 전체 구조
 ![total-simple](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/5aa2a006-6de3-4910-8518-2126d2420190)
 
 <details>
@@ -18,7 +18,7 @@
 </details>
 
 
-### 주문
+### 2. 주문
 ![order](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/a7762d3d-18b0-4445-ac96-6081a34802da)
 
 <details>
@@ -29,7 +29,7 @@
 </details>
 
 
-### 계산
+### 3. 계산
 ![checkstand](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c551ca35-2a68-4121-b0c5-5cdd02515a7c)
 
 <details>
@@ -41,16 +41,16 @@
 
 
 
-### dto
+### 4. dto
 - 에러 시 입력 무한 로직을 구현하기 위한 DTO
 
 ![dto](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c2c4379b-4e6f-4ea0-b4e3-36822107203b)
 
-### utils
+### 5. utils
 ![utils](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/9721b94a-565c-4bcb-93e4-67c722c9054f)
 
 
-### view
+### 6. view
 ![view](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/82b5ce96-da99-461a-b1b2-47573324bda7)
 
 
