@@ -1,38 +1,56 @@
 # 구현할 기능 목록
 ## 관계 도식
 ## 다이어그램 
-### 전체 구조
-![total-simple](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/5aa2a006-6de3-4910-8518-2126d2420190)
-
-![total-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/33967d8d-5d5f-40fb-a146-739a829c7ee5)
-
-### 서비스 구조
+## 다이어그램
+### 구조 안내
 - 주문(order) 과 계산(checkstand) 의 두 패키지로 분리
     - order 에는 날짜를 처리하는 day, 메뉴를 처리하는 menu 로 구성
     - checkstand 에는 할인과 이벤트를 처리하는 present, 뱃지를 처리하는 badge 로 구성되어있음
 
-#### 주문
+### 전체 구조
+![total-simple](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/5aa2a006-6de3-4910-8518-2126d2420190)
+
+<details>
+<summary>전체 구조 detail</summary>
+
+![total-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/33967d8d-5d5f-40fb-a146-739a829c7ee5)
+
+</details>
+
+
+### 주문
 ![order](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/a7762d3d-18b0-4445-ac96-6081a34802da)
+
+<details>
+<summary>주문 detail</summary>
 
 ![order-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/0a17d17e-917e-42ed-be1a-84f8dac96496)
 
+</details>
 
-#### 계산
+
+### 계산
 ![checkstand](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c551ca35-2a68-4121-b0c5-5cdd02515a7c)
+
+<details>
+<summary>계산 detail</summary>
 
 ![checkstand-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/6fafdf6c-d7a8-4d99-861b-9413c57e6fbf)
 
+</details>
 
-#### dto
+
+
+### dto
 - 에러 시 입력 무한 로직을 구현하기 위한 DTO
 
 ![dto](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c2c4379b-4e6f-4ea0-b4e3-36822107203b)
 
-#### utils
+### utils
 ![utils](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/9721b94a-565c-4bcb-93e4-67c722c9054f)
 
 
-#### view
+### view
 ![view](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/82b5ce96-da99-461a-b1b2-47573324bda7)
 
 
