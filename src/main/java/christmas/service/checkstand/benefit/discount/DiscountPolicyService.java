@@ -1,5 +1,8 @@
-package christmas.service.counter.discount;
 package christmas.service.checkstand.benefit.discount;
+
+import christmas.utils.menu.Menu;
+
+import java.util.HashMap;
 
 import static christmas.utils.Constants.*;
 
@@ -27,4 +30,7 @@ public abstract class DiscountPolicyService {
     }
 
     public abstract boolean isDiscountDay(int day);
+    public abstract int getDiscountPrice(int day, HashMap<Menu, Integer> menus);
+    public abstract int getDiscountPrice(int day);
+    public abstract String getDiscountName();
 }
