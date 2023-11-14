@@ -18,7 +18,7 @@
 </details>
 
 
-### 2. 주문
+### 2. 주문 (order)
 ![order](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/a7762d3d-18b0-4445-ac96-6081a34802da)
 
 <details>
@@ -28,8 +28,30 @@
 
 </details>
 
+- 날짜 및 메뉴를 처리하는 service
+- 할인 로직은 일체 처리하지 않고, 사용자의 입력 (문자열) 을 받음
+- 받은 값의 유효성을 체크하고, 사용 가능한 타입으로 변환함 
 
-### 3. 계산
+#### 2.1. 로직 
+
+```java
+// 날짜
+public int pickDay() {
+    this.day = this.dayInputService.getInputDay();
+    return this.day;
+}
+```
+
+```java
+// 메뉴 
+public void setMenus() {
+    String[] givenMenus = this.menuInputService.getInputMenus();
+    this.menuMapper(givenMenus);
+}
+```
+
+
+### 3. 계산 (checkstand)
 ![checkstand](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c551ca35-2a68-4121-b0c5-5cdd02515a7c)
 
 <details>
@@ -39,7 +61,60 @@
 
 </details>
 
+- 계산을 처리하는 service
+- 할인을 계산하고, 이벤트 상품 및 뱃지 증정을 처리함
 
+#### 3.1. 로직 
+```java
+// 할인 
+public HashMap<String, Integer> getDiscountHistory(HashMap<Menu, Integer> menus, int day) {
+    HashMap<String, Integer> discountHistory = new HashMap<>();
+
+    if(this.christmasService.getDiscountPrice(day) > 0)
+        discountHistory.put(this.christmasService.getDiscountName(), this.christmasService.getDiscountPrice(day));
+    if(this.weekdayService.getDiscountPrice(day, menus) > 0)
+        discountHistory.put(this.weekdayService.getDiscountName(), this.weekdayService.getDiscountPrice(day, menus));
+    if(this.weekendService.getDiscountPrice(day, menus) > 0)
+        discountHistory.put(this.weekendService.getDiscountName(), this.weekendService.getDiscountPrice(day, menus));
+    if(this.specialdayService.getDiscountPrice(day) > 0)
+        discountHistory.put(this.specialdayService.getDiscountName(), this.specialdayService.getDiscountPrice(day));
+
+    return discountHistory;
+}
+```
+
+```java
+// 이벤트 상품 
+public Menu getPresent(int totalPrice) {
+    Menu PRESENT = Menu.CHAMPAGNE;
+
+    if(!this.checkPresentExist(totalPrice)) {
+        return null;
+    }
+
+    return PRESENT;
+}
+```
+
+```java
+// 뱃지
+public Badge getBadge(int totalBenefitPrice) {
+    int STAR_THRESHOLD = 5_000;
+    int TREE_THRESHOLD = 10_000;
+    int SANTA_THRESHOLD = 20_000;
+
+    if(totalBenefitPrice >= SANTA_THRESHOLD) {
+        return Badge.SANTA;
+    }
+    if(totalBenefitPrice >= TREE_THRESHOLD) {
+        return Badge.TREE;
+    }
+    if(totalBenefitPrice >= STAR_THRESHOLD)
+        return Badge.STAR;
+
+    return null;
+}
+```
 
 ### 4. dto
 - 에러 시 입력 무한 로직을 구현하기 위한 DTO
@@ -49,10 +124,14 @@
 ### 5. utils
 ![utils](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/9721b94a-565c-4bcb-93e4-67c722c9054f)
 
+- 에러 메시지
+- validation 체크
+
 
 ### 6. view
 ![view](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/82b5ce96-da99-461a-b1b2-47573324bda7)
 
+- 사용자 입출력 
 
 - TODO
 
