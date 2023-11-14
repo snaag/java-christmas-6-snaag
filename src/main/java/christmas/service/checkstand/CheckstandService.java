@@ -1,5 +1,7 @@
 package christmas.service.checkstand;
 
+import christmas.service.checkstand.badge.Badge;
+import christmas.service.checkstand.badge.BadgeService;
 import christmas.service.checkstand.benefit.BenefitService;
 import christmas.utils.menu.Menu;
 
@@ -13,9 +15,11 @@ public class CheckstandService {
     private HashMap<Menu, Integer> menus;
 
     private final BenefitService benefitService;
+    private final BadgeService badgeService;
 
     public CheckstandService() {
         this.benefitService = new BenefitService();
+        this.badgeService = new BadgeService();
     }
 
     public void setDay(int day) {
@@ -57,6 +61,10 @@ public class CheckstandService {
 
     public int getTotalBenefitPrice() {
         return this.benefitService.getTotalBenefitPrice(this.getBenefitHistory());
+    }
+
+    public Badge getBadge() {
+        return this.badgeService.getBadge(this.getTotalBenefitPrice());
     }
 
     public int getDay() {
