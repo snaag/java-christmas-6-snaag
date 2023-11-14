@@ -1,4 +1,4 @@
-package christmas.service.counter;
+package christmas.service.checkstand;
 
 import christmas.utils.menu.Menu;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,19 +11,21 @@ import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class CounterServiceTest {
-    static CounterService counterService;
+class CheckstandServiceTest {
+    static CheckstandService checkstandService;
 
     @BeforeAll
     public static void prepare() {
-        counterService = new CounterService();
+        checkstandService = new CheckstandService();
     }
 
     @MethodSource("providedMenus")
     @ParameterizedTest
     void 총계_출력(HashMap<Menu, Integer> menus, int expectedPrice) {
+        checkstandService.setMenus(menus);
+
         assertThat(expectedPrice)
-                .isEqualTo(counterService.getTotalPrice(menus));
+                .isEqualTo(checkstandService.getTotalPrice());
 
     }
 
