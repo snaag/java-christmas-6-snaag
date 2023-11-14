@@ -7,6 +7,8 @@ import christmas.view.OutputView;
 
 import java.util.HashMap;
 
+import static christmas.utils.Constants.PRESENT_COUNT;
+
 
 public class ChristmasController {
     private final OrderService orderService;
@@ -22,6 +24,8 @@ public class ChristmasController {
 
         this.printBenefitOfToday();
         this.printMenu();
+
+        this.printBenefits();
     }
 
     public void order() {
@@ -49,6 +53,63 @@ public class ChristmasController {
                 .mapToInt(a -> a).toArray();
 
         OutputView.printMenu(names, counts);
+    }
+
+    public void printBenefits() {
+        this.printTotalPrice();
+        this.printPresent();
+        this.printBenefitHistory();
+        this.printTotalBenefitPrice();
+        this.printExpectedPaymentAmount();
+    }
+
+
+    private void printTotalPrice() {
+        int totalPrice = this.checkstandService.getTotalPrice();
+        OutputView.printTotalPrice(totalPrice);
+    }
+
+    private void printPresent() {
+        Menu present = this.checkstandService.getPresent();
+
+        if(present == null) {
+            OutputView.printPresentNone();
+            return;
+        }
+
+        OutputView.printPresent(present.getName(), PRESENT_COUNT);
+    }
+
+
+
+    private void printBenefitHistory() {
+        HashMap<String, Integer> benefitHistory = this.checkstandService.getBenefitHistory();
+
+        String[] benefits = benefitHistory.keySet().toArray(String[]::new);
+        if(benefits.length == 0) {
+            OutputView.printBenefitHistoryNone();
+            return;
+        }
+
+        int[] price = benefitHistory.keySet().stream()
+                .map(benefitHistory::get)
+                .mapToInt(n -> n)
+                .toArray();
+
+        OutputView.printBenefitHistory(benefits, price);
+    }
+
+    private void printTotalBenefitPrice() {
+        int totalBenefitPrice = this.checkstandService.getTotalBenefitPrice();
+
+        OutputView.printTotalBenefitPrice(totalBenefitPrice);
+    }
+
+    private void printExpectedPaymentAmount() {
+        int totalPrice = this.checkstandService.getTotalPrice();
+        int discountPrice = this.checkstandService.getDiscountPrice();
+
+        OutputView.printExpectedPaymentAmount(totalPrice - discountPrice);
     }
 }
 
