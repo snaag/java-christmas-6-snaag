@@ -1,5 +1,9 @@
-package christmas.service.counter.discount;
 package christmas.service.checkstand.benefit.discount;
+
+import christmas.utils.menu.Category;
+import christmas.utils.menu.Menu;
+
+import java.util.HashMap;
 
 import static christmas.utils.Constants.WEEKEND;
 
@@ -12,4 +16,29 @@ public class WeekendDiscountPolicyService extends DiscountPolicyService {
     public boolean isDiscountDay(int day) {
         return super.calendar[day] == WEEKEND;
     }
+
+    @Override
+    public int getDiscountPrice(int day, HashMap<Menu, Integer> menus) {
+        if(!this.isDiscountDay(day)) {
+            return 0;
+        }
+
+        int mainMenuCount = menus.keySet().stream()
+                .filter((menu) -> menu.getCategory().equals(Category.MAIN))
+                .map(menus::get)
+                .reduce(0, Integer::sum);
+
+        return mainMenuCount*DISCOUNT_AMOUNT;
+    }
+
+    @Override
+    public String getDiscountName() {
+        return this.DISCOUNT_NAME;
+    }
+
+    @Override
+    public int getDiscountPrice(int day) {
+        return 0;
+    }
+
 }
