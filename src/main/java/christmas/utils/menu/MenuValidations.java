@@ -2,7 +2,6 @@ package christmas.utils.menu;
 
 import christmas.service.order.menu.Category;
 import christmas.service.order.menu.Menu;
-import christmas.utils.MenuMessage;
 
 import java.util.Arrays;
 import java.util.HashSet;
