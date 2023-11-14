@@ -6,7 +6,7 @@ public enum Badge {
     SANTA("산타")
     ;
 
-    final String name;
+    private final String name;
     Badge(String name) {
         this.name = name;
     }
