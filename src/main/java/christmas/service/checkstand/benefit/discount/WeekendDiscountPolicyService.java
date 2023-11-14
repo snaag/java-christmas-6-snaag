@@ -9,9 +9,6 @@ import static christmas.utils.Constants.WEEKEND;
 
 public class WeekendDiscountPolicyService extends DiscountPolicyService {
 
-    String DISCOUNT_NAME = "특별 할인";
-    int DISCOUNT_AMOUNT = 2_023;
-
     @Override
     public boolean isDiscountDay(int day) {
         return super.calendar[day] == WEEKEND;
@@ -19,6 +16,8 @@ public class WeekendDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public int getDiscountPrice(int day, HashMap<Menu, Integer> menus) {
+        int DISCOUNT_AMOUNT = 2_023;
+
         if(!this.isDiscountDay(day)) {
             return 0;
         }
@@ -33,7 +32,7 @@ public class WeekendDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public String getDiscountName() {
-        return this.DISCOUNT_NAME;
+        return "특별 할인";
     }
 
     @Override
