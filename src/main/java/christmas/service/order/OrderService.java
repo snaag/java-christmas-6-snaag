@@ -3,25 +3,25 @@ package christmas.service.order;
 import christmas.service.order.day.DayService;
 import christmas.service.order.menu.MenuService;
 import christmas.utils.menu.Menu;
-import christmas.view.OutputView;
 
 import java.util.HashMap;
-import java.util.Set;
 
 public class OrderService {
     DayService dayService;
     MenuService menuService;
 
     public OrderService() {
-//        this.dayService = new DayService();
+        this.dayService = new DayService();
         this.menuService = new MenuService();
     }
 
-    public void run() {
-        this.menuService.setMenus();
+    public int pickDay() {
+        return this.dayService.pickDay();
+    }
 
-        int total = this.getTotalPrice(this.menuService.getMenus());
-        OutputView.printTotalPrice(total);
+    public HashMap<Menu, Integer> orderMenus() {
+        this.menuService.setMenus();
+        return this.menuService.getMenus();
     }
 
 
