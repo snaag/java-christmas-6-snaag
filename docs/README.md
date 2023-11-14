@@ -17,12 +17,12 @@
 
 
 ### 2. 주문 (order)
-![order](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/a7762d3d-18b0-4445-ac96-6081a34802da)
+![order-2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/1ccc804c-4986-49e0-aee6-528ad20c7a2b)
 
 <details>
 <summary>주문 detail</summary>
 
-![order-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/0a17d17e-917e-42ed-be1a-84f8dac96496)
+![order-detail-2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/20d870fd-1f5b-487d-8ff5-2c71c77645ef)
 
 </details>
 
@@ -120,7 +120,7 @@ public Badge getBadge(int totalBenefitPrice) {
 ![dto](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c2c4379b-4e6f-4ea0-b4e3-36822107203b)
 
 ### 5. utils
-![utils](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/9721b94a-565c-4bcb-93e4-67c722c9054f)
+![utils2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/df0177e7-c744-46c0-acb5-49a97673ccae)
 
 - 에러 메시지
 - validation 체크
