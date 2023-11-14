@@ -1,4 +1,4 @@
-package christmas.utils;
+package christmas.utils.menu;
 
 import static christmas.utils.Constants.ERROR_PREFIX;
 
