@@ -9,10 +9,6 @@ import static christmas.utils.Constants.DAY_UNDER_BOUND;
 
 public class ChristmasDiscountPolicyService extends DiscountPolicyService {
 
-    String DISCOUNT_NAME = "크리스마스 할인";
-    int BASE_DISCOUNT_AMOUNT = 1_000;
-    int DAY_DISCOUNT_AMOUNT = 100;
-
     @Override
     public boolean isDiscountDay(int day) {
         if(day >= DAY_UNDER_BOUND && day <= DAY_CHRISTMAS) {
@@ -23,6 +19,9 @@ public class ChristmasDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public int getDiscountPrice(int day) {
+        int DAY_DISCOUNT_AMOUNT = 100;
+        int BASE_DISCOUNT_AMOUNT = 1_000;
+
         if(!this.isDiscountDay(day)) {
             return 0;
         }
@@ -31,7 +30,7 @@ public class ChristmasDiscountPolicyService extends DiscountPolicyService {
 
     @Override
     public String getDiscountName() {
-        return this.DISCOUNT_NAME;
+        return "크리스마스 할인";
     }
 
     @Override
