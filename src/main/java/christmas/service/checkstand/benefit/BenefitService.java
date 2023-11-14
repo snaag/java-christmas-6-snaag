@@ -2,7 +2,7 @@ package christmas.service.checkstand.benefit;
 
 import christmas.service.checkstand.benefit.discount.DiscountService;
 import christmas.service.checkstand.benefit.present.PresentService;
-import christmas.utils.menu.Menu;
+import christmas.service.order.menu.Menu;
 
 import java.util.HashMap;
 
