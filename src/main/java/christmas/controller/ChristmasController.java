@@ -40,6 +40,7 @@ public class ChristmasController {
     private void printBenefitOfToday() {
         int day = this.checkstandService.getDay();
         OutputView.printBenefitGreeting(day);
+        OutputView.printNewLine();
     }
 
     private void printMenu() {
@@ -68,11 +69,13 @@ public class ChristmasController {
 
     private void printTotalPrice() {
         int totalPrice = this.checkstandService.getTotalPrice();
+        OutputView.printNewLine();
         OutputView.printTotalPrice(totalPrice);
     }
 
     private void printPresent() {
         Menu present = this.checkstandService.getPresent();
+        OutputView.printNewLine();
 
         if(present == null) {
             OutputView.printPresentNone();
@@ -86,6 +89,7 @@ public class ChristmasController {
 
     private void printBenefitHistory() {
         HashMap<String, Integer> benefitHistory = this.checkstandService.getBenefitHistory();
+        OutputView.printNewLine();
 
         String[] benefits = benefitHistory.keySet().toArray(String[]::new);
         if(benefits.length == 0) {
@@ -105,17 +109,20 @@ public class ChristmasController {
         int totalBenefitPrice = this.checkstandService.getTotalBenefitPrice();
 
         OutputView.printTotalBenefitPrice(totalBenefitPrice);
+        OutputView.printNewLine();
     }
 
     private void printExpectedPaymentAmount() {
         int totalPrice = this.checkstandService.getTotalPrice();
         int discountPrice = this.checkstandService.getDiscountPrice();
 
+        OutputView.printNewLine();
         OutputView.printExpectedPaymentAmount(totalPrice - discountPrice);
     }
 
     private void printEventBadge() {
         Badge badge = this.checkstandService.getBadge();
+        OutputView.printNewLine();
 
         if(badge == null) {
             OutputView.printEventBadgeNone();
