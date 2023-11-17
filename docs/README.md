@@ -6,23 +6,23 @@
     - checkstand 에는 할인과 이벤트를 처리하는 present, 뱃지를 처리하는 badge 로 구성되어있음
 
 ### 1. 전체 구조
-![total-simple](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/5aa2a006-6de3-4910-8518-2126d2420190)
+![total-simple](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/total-simple.png?raw=true)
 
 <details>
 <summary>전체 구조 detail</summary>
 
-![total-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/33967d8d-5d5f-40fb-a146-739a829c7ee5)
+![total-detail](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/total-simple.png?raw=true)
 
 </details>
 
 
 ### 2. 주문 (order)
-![order-2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/1ccc804c-4986-49e0-aee6-528ad20c7a2b)
+![order-2](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/order-2.png?raw=true)
 
 <details>
 <summary>주문 detail</summary>
 
-![order-detail-2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/20d870fd-1f5b-487d-8ff5-2c71c77645ef)
+![order-detail-2](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/order-detail-2.png?raw=true)
 
 </details>
 
@@ -50,12 +50,12 @@ public void setMenus() {
 
 
 ### 3. 계산 (checkstand)
-![checkstand](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c551ca35-2a68-4121-b0c5-5cdd02515a7c)
+![checkstand](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/checkstand.png?raw=true)
 
 <details>
 <summary>계산 detail</summary>
 
-![checkstand-detail](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/6fafdf6c-d7a8-4d99-861b-9413c57e6fbf)
+![checkstand-detail](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/checkstand-detail.png?raw=true)
 
 </details>
 
@@ -117,17 +117,17 @@ public Badge getBadge(int totalBenefitPrice) {
 ### 4. dto
 - 에러 시 입력 무한 로직을 구현하기 위한 DTO
 
-![dto](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/c2c4379b-4e6f-4ea0-b4e3-36822107203b)
+![dto](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/dto.png?raw=true)
 
 ### 5. utils
-![utils2](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/df0177e7-c744-46c0-acb5-49a97673ccae)
+![utils2](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/utils2.png?raw=true)
 
 - 에러 메시지
 - validation 체크
 
 
 ### 6. view
-![view](https://github.com/snaag/java-christmas-6-snaag/assets/42943992/82b5ce96-da99-461a-b1b2-47573324bda7)
+![view](https://github.com/snaag/java-christmas-6-snaag/blob/main/docs/_diagram/view.png?raw=true)
 
 - 사용자 입출력 
 
